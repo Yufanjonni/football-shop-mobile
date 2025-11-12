@@ -64,7 +64,6 @@ Metode build(BuildContext context) untuk mengakses context saat membangun UI.
 - **Hot Reload** Memuat ulang kode sumber dan memperbarui UI tanpa menghapus state
 - **Hot Restart** Memulai ulang seluruh aplikasi dari awal
 
-<details>
 <summary>Tugas 8<summary>
 ## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
 
