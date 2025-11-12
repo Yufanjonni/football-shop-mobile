@@ -67,7 +67,8 @@ Metode build(BuildContext context) untuk mengakses context saat membangun UI.
 </details>
 
 <details>
-<summary>Tugas 8<summary>
+<summary>Tugas 8</summary>
+
 ## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
 
 **Navigator.push()** menambahkan (push) halaman baru di atas halaman saat ini di stack navigasi.
