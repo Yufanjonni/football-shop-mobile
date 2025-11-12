@@ -1,3 +1,5 @@
+<details>
+<summary>Tugas 7</summary>
 # Jelaskan apa itu widget tree pada Flutter dan bagaimana hubungan parent-child (induk-anak) bekerja antar widget.
 
 Flutter membangun seluruh antarmuka pengguna (UI) dengan struktur pohon widget (widget tree).
@@ -62,4 +64,96 @@ Metode build(BuildContext context) untuk mengakses context saat membangun UI.
 - **Hot Reload** Memuat ulang kode sumber dan memperbarui UI tanpa menghapus state
 - **Hot Restart** Memulai ulang seluruh aplikasi dari awal
 
+<details>
+<details>
+<summary>Tugas 8<summary>
+## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
 
+**Navigator.push()** menambahkan (push) halaman baru di atas halaman saat ini di stack navigasi.
+- Halaman lama tetap tersimpan di memori (tidak hilang).
+- User bisa kembali ke halaman sebelumnya dengan tombol Back.
+
+**Navigator.pushReplacement()** mengganti (replace) halaman saat ini dengan halaman baru.
+- Halaman lama dihapus dari stack (tidak bisa kembali ke sana).
+- Tombol “Back” tidak akan mengembalikan ke halaman sebelumnya, karena sudah diganti.
+
+## Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+
+1. **Scaffold**: kerangka dasar halaman di Flutter menyediakan struktur visual utama: AppBar, Drawer, Body, FloatingActionButton, dll.
+2. **AppBar**: bagian header halaman (biasanya berisi judul, logo, atau tombol aksi).
+3. **Drawer**: digunakan untuk navigasi antar halaman utama aplikasi.
+
+Dengan menggunakan kombinasi:
+-Scaffold untuk struktur halaman utama,
+-AppBar untuk judul dan aksi global,
+-Drawer untuk navigasi antar halaman utama,
+
+##  Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+
+1. **Padding**
+- Meningkatkan keterbacaan dan kenyamanan visual.
+- Mencegah elemen bertabrakan dengan tepi layar.
+- Membantu menciptakan spacing yang konsisten di seluruh halaman.
+
+<pre>Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: TextFormField(
+    decoration: InputDecoration(
+      hintText: "Nama Product",
+      labelText: "Nama Product",
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+    ),
+  ),
+),</pre>
+
+2. **SingleChildScrollView**
+- Mencegah error "Bottom Overflowed by pixels" saat keyboard muncul.
+- Cocok untuk form panjang yang tidak muat di satu layar.
+- Memastikan pengguna bisa mengakses semua input tanpa terpotong.
+
+<pre>
+body: Form(
+  key: _formKey,
+  child: SingleChildScrollView(
+    child: Column(
+      children: [
+        // ... banyak TextFormField
+      ],
+    ),
+  ),
+),</pre>
+
+3. **ListView**
+-
+-
+-
+
+<pre>
+ child: ListView(
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(color: Colors.blue),
+            child: Column(
+              children: [
+                Text(
+                  'Football Shop',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+        ),
+</pre>
+
+## Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+
+warna tema disesuaikan melalui properti seperti AppBar.backgroundColor dan ElevatedButton.styleFrom().
+<details>
