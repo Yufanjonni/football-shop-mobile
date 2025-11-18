@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:football_shop/widgets/left_drawer.dart';
 import 'package:football_shop/widgets/product_card.dart';
-
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
   final List<ItemHomepage> items = [
     ItemHomepage("All Products", Icons.newspaper, Colors.blue),
     ItemHomepage("My Products", Icons.my_library_books, Colors.green),
     ItemHomepage("Create Product", Icons.add, Colors.red),
+    ItemHomepage("Logout", Icons.logout, Colors.yellow),
   ];
 
   @override
@@ -57,7 +57,7 @@ class MyHomePage extends StatelessWidget {
                     padding: const EdgeInsets.all(20),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    crossAxisCount: 3,
+                    crossAxisCount: 4,
                     // Agar grid menyesuaikan tinggi kontennya.
                     shrinkWrap: true,
 
