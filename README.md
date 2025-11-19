@@ -159,3 +159,51 @@ body: Form(
 
 warna tema disesuaikan melalui properti seperti AppBar.backgroundColor dan ElevatedButton.styleFrom().
 </details>
+
+<details>
+<summary>Tugas 9</summary>
+
+## Jelaskan mengapa kita perlu membuat model Dart saat mengambil/mengirim data JSON? Apa konsekuensinya jika langsung memetakan Map<String, dynamic> tanpa model (terkait validasi tipe, null-safety, maintainability)?
+
+1. Validasi Tipe Data (Type Safety)
+2. Null-safety (menghindari runtime crash)
+3. Maintainability (kode lebih mudah dirawat)
+4. Serialization otomatis dengan built_value, freezed, json_serializable
+5. Refactor JSON lebih mudah
+
+## Apa fungsi package http dan CookieRequest dalam tugas ini? Jelaskan perbedaan peran http vs CookieRequest.
+
+fungsi package http
+**Mengirim request HTTP**: GET ke API publik, Fetch data JSON, Mengirim form sederhana
+
+fungsi CookieRequest
+**Menyimpan cookie dan session otomatis**
+
+perbedaan 
+|Aspek|http|CookieRequest|
+|-----|----|-------------|
+|Menyimpan cookie / session?|Tidak|Ya|
+|Bisa login ke Django?|Tidak|Bisa|
+|Kompleksitas|Langsung pakai|Butuh Provider untuk state|
+|Use-case utama|Fetch data publik|Request user-authenticated|
+
+**Pakai http ketika:**
+-Data tidak membutuhkan login
+-API publik (misalnya list produk)
+-Hanya GET sederhana
+-Anda tidak butuh cookie/session
+
+**Pakai CookieRequest ketika:**
+-Login/logout
+-Registrasi
+-POST data user
+-Mengirim form Django yang butuh CSRF
+-Mengambil data profil user
+-CRUD yang memerlukan autentikasi
+
+## Jelaskan konfigurasi konektivitas yang diperlukan agar Flutter dapat berkomunikasi dengan Django. Mengapa kita perlu menambahkan 10.0.2.2 pada ALLOWED_HOSTS, mengaktifkan CORS dan pengaturan SameSite/cookie, dan menambahkan izin akses internet di Android? Apa yang akan terjadi jika konfigurasi tersebut tidak dilakukan dengan benar?
+
+-menambahkan 10.0.2.2 pada ALLOWED_HOSTS karena Pada Android emulator 127.0.0.1 bukan mengarah ke komputer host, tetapi ke emulator itu sendiri. sehingga Android menyediakan alias khusus: 10.0.2.2 sebagai local host komputer
+
+-CORS enabled 
+</details>
